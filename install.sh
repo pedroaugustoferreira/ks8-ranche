@@ -1,5 +1,6 @@
 #!/bin/bash
   echo "export IP=$IP"
+  echo "export HOSTNAME=$HOSTNAME"
   sleep 5;
 
   curl https://releases.rancher.com/install-docker/19.03.sh | sh
@@ -22,3 +23,5 @@ iface enp3s0 inet static
   gateway 192.168.100.1
   dns-nameservers 192.168.100.150
 EOF
+
+hostnamectl set-hostname $HOSTNAME
